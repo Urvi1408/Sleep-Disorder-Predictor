@@ -10,6 +10,7 @@ X, y, encoders, target_encoder = preprocess()
 
 xgb_model = xgb.XGBClassifier(
     objective="multi:softprob",
+    num_class=len(target_encoder.classes_),
     eval_metric="mlogloss",
     random_state=42
 )
@@ -52,6 +53,10 @@ def predict_sleep_disorder(age, gender, occupation, sleep_duration,
 
 if __name__ == "__main__":
 
+    print("X shape:", X.shape)
+    print("y shape:", y.shape)
+    print("Unique y values:", y.unique())
+    print("Target classes:", target_encoder.classes_)
     xgb_model.fit(X, y)
 
     print("Model trained successfully!")
