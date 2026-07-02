@@ -12,14 +12,13 @@
     <div class="navbar">
         <div>
            <h1><b>
-            <a href="index.html">Sleep Disorder Predictor</a>
+            <a href="{{ url_for('home') }}">Sleep Disorder Predictor</a>
         </b></h1>
         </div>
         <nav id="links">
-            <a href="index.html" class="active">Home</a>
-            <a href="info.html">Know More</a>
-            <a href="predict.html">Test</a>
-            <a href="result.html">Result</a>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('info') }}">Know More</a>
+            <a href="{{ url_for('predict') }}">Predict</a>
         </nav>
     </div>
     <div class="hero-section">
@@ -30,11 +29,11 @@
             Answer a few questions and receive an estimated prediction along with helpful information.
         </p>
         
-        <a href="predict.html" class="btn">Take the Test</a>
+        <a href="{{ url_for('predict') }}" class="btn">Take the Test</a>
         </div>
 
         <div class="image-card">
-            <img src="sleep.png" alt="Sleeping Child">
+            <img src="{{ url_for('static', filename='images/sleep.png') }}" alt="Sleep Image">
     </div>
     
     </div>

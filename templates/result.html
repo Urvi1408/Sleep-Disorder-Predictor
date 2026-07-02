@@ -14,12 +14,43 @@
         </b></h1>
         </div>
         <nav id="links">
-            <a href="index.html">Home</a>
-            <a href="info.html">Know More</a>
-            <a href="predict.html">Test</a>
-            <a href="result.html"class="active">Result</a>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('info') }}">Know More</a>
+            <a href="{{ url_for('predict') }}">Predict</a>
         </nav>
     </div>
+
+    <section class="result-section">
+
+    <div class="result-card">
+
+        <i class="fa-solid fa-moon result-icon"></i>
+
+        <h2>Your Prediction</h2>
+
+        <h1 class="prediction">
+            {{ prediction }}
+        </h1>
+
+        <p class="result-text">
+            This prediction is generated using our machine learning model based on the information you provided.
+        </p>
+
+        <div class="result-buttons">
+
+            <a href="{{ url_for('predict') }}" class="btn">
+                Predict Again
+            </a>
+
+            <a href="{{ url_for('info') }}" class="btn secondary-btn">
+                Learn More
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
     
 </body>
 </html>

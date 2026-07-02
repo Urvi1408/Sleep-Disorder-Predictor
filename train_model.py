@@ -9,8 +9,8 @@ warnings.filterwarnings("ignore")
 X, y, encoders, target_encoder = preprocess()
 
 xgb_model = xgb.XGBClassifier(
-    objective="multi:softprob",
-    num_class=len(target_encoder.classes_),
+    objective="multi:softmax",
+    num_class=3,
     eval_metric="mlogloss",
     random_state=42
 )

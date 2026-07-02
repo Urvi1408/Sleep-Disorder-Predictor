@@ -4,9 +4,7 @@ from sklearn.preprocessing import LabelEncoder
 def preprocess():
     df = pd.read_csv("sleep_disorder_data_advanced_2000 (1).csv")
 
-    df["Sleep_disorder"] = df["Sleep_disorder"].fillna(
-        df["Sleep_disorder"].mode()[0]
-    )
+    df["Sleep_disorder"] = df["Sleep_disorder"].fillna("None")
 
     encoders = {}
 
@@ -29,4 +27,7 @@ def preprocess():
     X = df.drop("Sleep_disorder", axis=1)
     y = df["Sleep_disorder"]
 
+    print(df["Sleep_disorder"].value_counts())
+    print("Unique classes:", df["Sleep_disorder"].unique())
+    print("Number of classes:", len(df["Sleep_disorder"].unique()))
     return X, y, encoders, target_encoder
