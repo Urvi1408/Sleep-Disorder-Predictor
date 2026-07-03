@@ -18,7 +18,6 @@ nav a{
     font-size:20px;
 }
 nav a:hover{
-    /* text-decoration:underline; */
     color:#6366F1 ;
 }
 #links{
@@ -41,6 +40,8 @@ nav a:hover{
     align-items:center;
     padding:50px;
     padding-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 40px;
 }
 
 .image-card
@@ -51,7 +52,8 @@ nav a:hover{
     padding:15px;
     border-radius:25px;
     border:1px solid #334155;
-    width:420px;
+    width:100%;
+    max-width:420px;
     overflow: hidden;
     box-shadow:0 0 20px rgba(99,102,241,.12),0 15px 30px rgba(0,0,0,.35);
 }
@@ -67,7 +69,9 @@ nav a:hover{
 
 .panel
 {
-    width:80%;
+    flex:1;
+    max-width:700px;
+    width:100%;
     padding:30px 30px 20px;
     font-weight:600;
     line-height: 1.5;
@@ -164,7 +168,7 @@ nav a:hover{
 
 .tip-grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
     margin-top:30px;
 }
@@ -219,7 +223,7 @@ nav a:hover{
 }
 .steps{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
 }
 .step{
@@ -285,7 +289,7 @@ html{
     width:80%;
     margin:50px auto;
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:25px;
 }
 
@@ -566,4 +570,140 @@ input[type="range"]::-webkit-slider-thumb{
 .result-card{
 
     border:1px solid rgba(124,108,255,.35);
+}
+
+@media screen and (max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    #links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    nav a{
+        margin-left:0;
+        font-size:18px;
+    }
+
+    .hero-section{
+        padding:20px;
+    }
+
+    .panel{
+        padding:25px;
+    }
+
+    .panel h3{
+        font-size:34px;
+    }
+
+    .panel p{
+        font-size:18px;
+    }
+
+    .info-card,
+    .card_,
+    .how,
+    .info-section{
+        width:95%;
+        padding:25px;
+    }
+
+    .info-card h3,
+    .card_ h3,
+    .how h3,
+    .info-section h2{
+        font-size:28px;
+    }
+
+    .steps{
+        grid-template-columns:1fr;
+    }
+
+    .quick-nav{
+        grid-template-columns:1fr;
+    }
+
+    .result-buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+
+}
+@media screen and (max-width:480px){
+
+    h1{
+        font-size:24px;
+        text-align:center;
+    }
+
+    .panel h3{
+        font-size:28px;
+    }
+
+    .panel p{
+        font-size:16px;
+    }
+
+    .tip h4,
+    .step h4{
+        font-size:20px;
+    }
+
+    .prediction{
+        font-size:40px;
+    }
+
+}
+@media screen and (max-width: 992px){
+
+    .navbar{
+        padding:15px 20px;
+    }
+
+    .hero-section{
+        flex-direction:column;
+        text-align:center;
+        padding:30px 20px;
+        gap:30px;
+    }
+
+    .panel{
+        width:100%;
+        max-width:700px;
+        margin:0;
+    }
+
+    .image-card{
+        width:100%;
+        max-width:450px;
+    }
+
+    .tip-grid{
+        grid-template-columns:1fr;
+    }
+
+    .steps{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .quick-nav{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .predict-card,
+    .result-card{
+        width:100%;
+        max-width:700px;
+    }
+
 }
