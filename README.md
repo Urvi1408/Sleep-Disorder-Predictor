@@ -34,7 +34,9 @@ The application combines machine learning with a user-friendly web interface and
 - Healthy sleep tips
 - Fast prediction results
 
+
 ---
+
 
 ## 🖼️ Screenshots
 
@@ -45,6 +47,7 @@ The landing page introduces the application, highlights its purpose, and provide
 
 The lower section provides healthy sleep tips and explains how the prediction system works.
 ![Home Page](screenshots/home(2).png)
+
 ![Home Page](screenshots/home(3).png)
 
 ### Prediction Page
@@ -52,6 +55,7 @@ The lower section provides healthy sleep tips and explains how the prediction sy
 Users enter their lifestyle and health information to receive a prediction.
 
 ![Prediction Page](screenshots/predict(1).png)
+
 ![Prediction Page](screenshots/predict(2).png)
 
 
@@ -66,9 +70,13 @@ The application displays the predicted sleep disorder based on the provided inpu
 The **Know More** page provides educational information about sleep disorders, their causes, symptoms, prevention, and healthy sleep habits.
 
 ![Know More Page](screenshots/know more(1).png)
+
 ![Know More Page](screenshots/know more(2).png)
+
 ![Know More Page](screenshots/know more(3).png)
+
 ![Know More Page](screenshots/know more(4).png)
+
 ![Know More Page](screenshots/know more(5).png)
 
 ---
