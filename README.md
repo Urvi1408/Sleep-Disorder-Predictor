@@ -69,15 +69,15 @@ The application displays the predicted sleep disorder based on the provided inpu
 
 The **Know More** page provides educational information about sleep disorders, their causes, symptoms, prevention, and healthy sleep habits.
 
-![Know More Page](screenshots/know more(1).png)
+![Know More Page](screenshots/know-more(1).png)
 
-![Know More Page](screenshots/know more(2).png)
+![Know More Page](screenshots/know-more(2).png)
 
-![Know More Page](screenshots/know more(3).png)
+![Know More Page](screenshots/know-more(3).png)
 
-![Know More Page](screenshots/know more(4).png)
+![Know More Page](screenshots/know-more(4).png)
 
-![Know More Page](screenshots/know more(5).png)
+![Know More Page](screenshots/know-more(5).png)
 
 ---
 
