@@ -1,0 +1,6 @@
+__pycache__/   #python cache 
+*.py[cod]
+
+.vscode/        #vs code settings 
+
+*.log           #logs
