@@ -42,10 +42,10 @@ The XGBoost model was evaluated using a train-test split on the dataset.
 
 | Metric | Score |
 |--------|-------|
-| Accuracy | **99.87%** |
-| Precision | **99.87%** |
-| Recall | **99.87%** |
-| F1 Score | **99.87%** |
+| Accuracy | **97.30%** |
+| Precision | **97.30%** |
+| Recall | **97.30%** |
+| F1 Score | **97.30%** |
 
 The model successfully classifies three classes:
 
