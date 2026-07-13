@@ -2,7 +2,19 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
 def preprocess():
-    df = pd.read_csv("sleep_disorder_data_advanced_2000 (1).csv")
+    df = pd.read_csv("Sleep_Data_Sampled.csv")
+
+    df = df.rename(columns={
+        "Sleep Duration": "Sleep_duration",
+        "Quality of Sleep": "Quality_of_sleep",
+        "Physical Activity Level": "Physical_activity",
+        "Stress Level": "Stress_Level",
+        "BMI Category": "BMI_category",
+        "Heart Rate": "Heart_rate",
+        "Daily Steps": "Daily_steps",
+        "Sleep Disorder": "Sleep_disorder",
+        "Blood Pressure": "Blood_Pressure"
+    })
 
     df["Sleep_disorder"] = df["Sleep_disorder"].fillna("None")
 
@@ -11,12 +23,13 @@ def preprocess():
     categorical_columns = [
         "Gender",
         "Occupation",
-        "BMI_category"
+        "BMI_category",
+        "Blood_Pressure"
     ]
 
     for col in categorical_columns:
         le = LabelEncoder()
-        df[col] = le.fit_transform(df[col])
+        df[col] = le.fit_transform(df[col].astype(str))
         encoders[col] = le
 
     target_encoder = LabelEncoder()
