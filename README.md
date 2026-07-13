@@ -1,6 +1,6 @@
 # 🌙 Sleep Disorder Predictor
 
-An AI-powered web application that predicts potential sleep disorders using machine learning. Built with XGBoost, Flask, HTML, CSS, and a small amount of JavaScript.
+An AI-powered web application that predicts sleep disorders using an XGBoost machine learning model trained on a large sleep health and lifestyle dataset. The application allows users to enter their health and lifestyle information and instantly receive a prediction through a responsive Flask web interface.
 
 ---
 
@@ -34,6 +34,24 @@ The application combines machine learning with a user-friendly web interface and
 - Healthy sleep tips
 - Fast prediction results
 
+
+---
+## 📈 Model Performance
+
+The XGBoost model was evaluated using a train-test split on the dataset.
+
+| Metric | Score |
+|--------|-------|
+| Accuracy | **99.87%** |
+| Precision | **99.87%** |
+| Recall | **99.87%** |
+| F1 Score | **99.87%** |
+
+The model successfully classifies three classes:
+
+- Healthy
+- Insomnia
+- Sleep Apnea
 
 ---
 
@@ -108,7 +126,7 @@ The **Know More** page provides educational information about sleep disorders, t
 
 ## 📊 Dataset
 
-The dataset contains information related to:
+The model was trained on a sleep health dataset containing approximately **15,000 records** with the following features:
 
 - Age
 - Gender
@@ -123,7 +141,7 @@ The dataset contains information related to:
 
 Target Variable:
 
-- Sleep Disorder
+- Sleep Disorder (Healthy, Insomnia, Sleep Apnea)
 
 ---
 
@@ -156,7 +174,7 @@ python app.py
 Open
 
 ```
-http://127.0.0.1:5000
+http://127.0.0.1:8000
 ```
 
 ---
@@ -176,7 +194,7 @@ Sleep-Disorder-Predictor/
 │
 ├── requirements.txt                # Python dependencies
 ├── README.md                       # Project documentation
-├── sleep_disorder_data_advanced_2000 (1).csv
+├── Sleep_Data_Sampled.csv
 │
 ├── static/
 │   ├── favicon.ico
@@ -206,10 +224,10 @@ Sleep-Disorder-Predictor/
 ---
 ## 🚀 Future Improvements
 
-- Improve model accuracy using additional datasets.
-- Add user authentication and prediction history.
-- Provide personalized sleep improvement recommendations.
-- Visualize user sleep trends with interactive charts.
+- Add confidence scores for each prediction.
+- Visualize sleep trends with interactive charts.
+- Store prediction history for registered users.
+- Add multilingual support.
 
 ---
 
