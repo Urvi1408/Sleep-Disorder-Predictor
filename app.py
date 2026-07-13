@@ -30,10 +30,9 @@ def predict():
         quality_of_sleep = int(request.form["quality_of_sleep"])
         physical_activity = float(request.form["physical_activity"])
         stress_level = int(request.form["stress_level"])
-        bmi = float(request.form["bmi"])
+        blood_pressure = request.form["blood_pressure"]
         heart_rate = int(request.form["heart_rate"])
         daily_steps = int(request.form["daily_steps"])
-        sleep_efficiency = float(request.form["sleep_efficiency"])
         bmi_category = request.form["bmi_category"]
 
         user_data = pd.DataFrame([{
@@ -44,17 +43,17 @@ def predict():
             "Quality_of_sleep": quality_of_sleep,
             "Physical_activity": physical_activity,
             "Stress_Level": stress_level,
-            "BMI": bmi,
+            "Blood_Pressure":blood_pressure,
             "Heart_rate": heart_rate,
             "Daily_steps": daily_steps,
-            "Sleep_Efficiency": sleep_efficiency,
             "BMI_category": bmi_category
         }])
 
         categorical_columns = [
             "Gender",
             "Occupation",
-            "BMI_category"
+            "BMI_category",
+            "Blood_Pressure"
         ]
 
         for col in categorical_columns:

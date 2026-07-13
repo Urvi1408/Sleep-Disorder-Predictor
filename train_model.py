@@ -9,15 +9,19 @@ warnings.filterwarnings("ignore")
 X, y, encoders, target_encoder = preprocess()
 
 xgb_model = xgb.XGBClassifier(
-    objective="multi:softmax",
+    objective="multi:softprob",
     num_class=3,
+    n_estimators=300,
+    max_depth=6,
+    learning_rate=0.1,
+    subsample=0.8,
+    colsample_bytree=0.8,
     eval_metric="mlogloss",
     random_state=42
 )
-
 def predict_sleep_disorder(age, gender, occupation, sleep_duration,
                            quality_of_sleep, physical_activity, stress_level,
-                           bmi, heart_rate, daily_steps, sleep_efficiency,
+                           bmi,blood_pressure, heart_rate, daily_steps,
                            bmi_category):
 
     user_data = pd.DataFrame([{
@@ -28,15 +32,14 @@ def predict_sleep_disorder(age, gender, occupation, sleep_duration,
         "Quality_of_sleep": quality_of_sleep,
         "Physical_activity": physical_activity,
         "Stress_Level": stress_level,
-        "BMI": bmi,
+        "Blood_Pressure":blood_pressure,
         "Heart_rate": heart_rate,
         "Daily_steps": daily_steps,
-        "Sleep_Efficiency": sleep_efficiency,
         "BMI_category": bmi_category
     }])
 
     try:
-        categorical_columns = ["Gender", "Occupation", "BMI_category"]
+        categorical_columns = ["Gender", "Occupation", "BMI_category", "Blood_Pressure"]
 
         for col in categorical_columns:
             user_data[col] = encoders[col].transform(user_data[col])

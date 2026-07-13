@@ -37,7 +37,22 @@ def preprocess():
         df["Sleep_disorder"]
     )
 
-    X = df.drop("Sleep_disorder", axis=1)
+    X = df.drop(["Person ID", "Sleep_disorder"], axis=1)
+    X = X[
+    [
+        "Age",
+        "Gender",
+        "Occupation",
+        "Sleep_duration",
+        "Quality_of_sleep",
+        "Physical_activity",
+        "Stress_Level",
+        "Blood_Pressure",
+        "Heart_rate",
+        "Daily_steps",
+        "BMI_category"
+    ]
+]
     y = df["Sleep_disorder"]
 
     print(df["Sleep_disorder"].value_counts())
